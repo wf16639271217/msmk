@@ -8,8 +8,8 @@
             <div class="from-top">
                 <img style="width:35px;height:43px" src="../../public/images/A_07.jpg"/>
                 <div class="from-top-box">
-                    <input class="input" type="text" placeholder="请输入手机号"/>
-                    <button class="button">获取验证码</button>
+                    <input class="input" type="number" placeholder="请输入手机号" v-model="phone"/>
+                    <button class="button" @click="address">获取验证码</button>
                 </div>
             </div>
 
@@ -18,11 +18,11 @@
             <div class="from-top">
                 <img style="width:35px;height:43px" src="../../public/images/A_09.jpg"/>
                 <div class="from-top-box">
-                    <input class="input" type="text" placeholder="请输入手机号"/>
+                    <input class="input" type="text" placeholder="请输入验证码"/>
                 </div>
             </div>
         </div>
-        <button class="login-login">登陆</button>
+        <button class="login-login" @click="addLogin">登陆</button>
         <div class="login-checkout">
             <span>*未注册的手机号将自动注册</span>
             <span>密码登录</span>
@@ -43,11 +43,37 @@
     </div>
 </template>
 
+<script>
+import { sms_code } from '@/http/api.js'
+export default {
+    data(){
+        return {
+            phone:"",
+        }
+    },
+    methods:{
+        async address(){
+            const {data:res} = await sms_code({
+                mobile:this.phone,
+                sms_type:"login"
+            })
+            console.log(res);
+        },
+        addLogin(){
+
+        }
+    }
+}
+</script>
+
+
+
 <style lang="scss" scoped>
 .login{
-    width: 750px;
+    width: 100vw;
+    height: 100vh;
     header{
-        width: 750px;
+        width: 100%;
         height: 70px;
         padding-left: 10px;
         padding-top: 10px;
@@ -56,7 +82,7 @@
         }
     }
     .login-box{
-        width: 750px;
+        width: 100%;
         height: 370px;
         position: relative;
         img{

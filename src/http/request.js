@@ -6,7 +6,7 @@ import { Toast } from 'vant'
 // 基础配置
 const service = axios.create({
     baseURL: baseApi, // url = base api url + request url
-    withCredentials: true, // send cookies when cross-domain requests
+    // withCredentials: true, // send cookies when cross-domain requests 请求是否携带Cookies
     timeout: 5000 // request timeout
 })
 
@@ -20,6 +20,7 @@ service.interceptors.request.use(config => {
         duration: 3000, // 持续展示 toast
     });
     config.headers['remember_token'] = JSON.parse(sessionStorage.getItem('token'));
+    console.log(config);
     return config
 })
 
@@ -33,11 +34,4 @@ service.interceptors.response.use(res => {
     return Promise.reject(error)
 })
 
-
-
-
-
-
-
-
-module.exports = service
+export default service
