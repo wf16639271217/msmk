@@ -12,6 +12,9 @@
                     <button class="button">获取验证码</button>
                 </div>
             </div>
+
+
+            
             <div class="from-top">
                 <img style="width:35px;height:43px" src="../../public/images/A_09.jpg"/>
                 <div class="from-top-box">
