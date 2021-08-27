@@ -28,11 +28,11 @@
             ——————  第三方登录   ——————
         </div>
         <div class="wxqq">
-            <div >
+            <div class="wxqq-box">
                 <img class="wxqq-img" src="../../public/images/A_12.jpg" alt="">
-                <p class="wfqq-p">微信登录</p>
+                <p class="wxqq-p">微信登录</p>
             </div>
-            <div>
+            <div class="wxqq-box">
                 <img class="wxqq-img" src="../../public/images/A_14.jpg" alt="">
                 <p class="wxqq-p">QQ登录</p>
             </div>
@@ -133,8 +133,8 @@
         justify-content: space-between;
         .wxqq-box{
             .wxqq-img{
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             }
             .wxqq-p{
                 margin-top: 25px;
