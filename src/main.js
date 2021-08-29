@@ -6,6 +6,7 @@ import '@/plugilus/vant'
 // 移动端适配
 import 'lib-flexible/flexible'
 
+import "@/assets/icon/iconfont.css"
 
 
 

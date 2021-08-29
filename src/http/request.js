@@ -20,7 +20,6 @@ service.interceptors.request.use(config => {
         duration: 3000, // 持续展示 toast
     });
     config.headers['remember_token'] = JSON.parse(sessionStorage.getItem('token'));
-    console.log(config);
     return config
 })
 

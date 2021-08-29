@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <header><van-icon name="arrow-left" /></header>
+        <header><van-icon name="arrow-left" @click="$router.go(-1)"/></header>
         <div class="login-box">
             <img src="../../public/images/A_03.jpg"/>
         </div>
