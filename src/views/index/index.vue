@@ -89,7 +89,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="kong">
 
             </div>
@@ -127,7 +126,6 @@ export default {
             this.t_list = res[0]
             this.tj_list = res[1]
             this.ms_list = res[2]
-            console.log(res);
         }
     }
 };

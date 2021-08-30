@@ -13,11 +13,22 @@ export function sms_code(arg) {
 // 登陆的请求
 export function login(arg) {
     return request({
-        url: address.smsCode,
+        url: address.login,
         data: arg,
         method: "post"
     })
 }
+
+//  设置登陆密码/修改
+export function setPassword(arg) {
+    return request({
+        url: address.password,
+        data: arg,
+        method: "post"
+    })
+}
+
+
 
 // 首页底部tabbar的请求
 export function bottom(arg) {

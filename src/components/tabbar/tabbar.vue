@@ -24,7 +24,6 @@ export default {
     async created(){
         const { data:res } = await bottom();
         this.tabbat_list = res.index
-
     },
     methods:{
         tabbar(item,index){

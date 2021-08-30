@@ -104,7 +104,7 @@
             </ul>
             <div style="width:100%;height:30px;background:#F7F8FA"></div>
 
-            <ul >
+            <ul>
                 <li>
                     <div style="display:flex">
                         <img style="width:20px;height:20px;margin-right:10px" src="../../../public/images/person-xiaoxi.png" />
@@ -141,7 +141,7 @@
                         >
                     </div>
                 </li>
-                <li>
+                <li @click="goSetUser()">
                     <div style="display:flex">
                         <img style="width:20px;height:20px;margin-right:10px" src="../../../public/images/person-sz.png" />
                         <p style="font-size:16px">设置</p>
@@ -151,20 +151,29 @@
                     </div>
                 </li>
             </ul>
-
-
+        </div>
+        <div  style="margin-bottom:30px">
 
         </div>
-
         
     </div>
 </template>
 
 <script>
+import { Toast } from 'vant';
 export default {
     methods:{
+        // 去登陆页
         goLogin(){
             this.$router.push("/login")
+        },
+        goSetUser(){
+            if(this.$store.state.remember_token != ""){
+                this.$router.push("/setUser")
+            }else{
+                Toast.fail('还没登陆,先登陆!');
+                this.$router.push("/login")
+            }
         }
     }
 }
@@ -173,7 +182,7 @@ export default {
 <style lang="scss" scoped>
 .person{
     width: 100vw;
-    height: 100%;
+    padding-bottom: 50px;
     .person-box{
         width: 100%;
         height: 450px;

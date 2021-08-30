@@ -4,5 +4,6 @@ module.exports = {
     bottom: '/nav/bottom',
     banner: '/banner',
     nav: "/nav",
-    appIndex: "/recommend/appIndex"
+    appIndex: "/recommend/appIndex",
+    password: "/password"
 }
