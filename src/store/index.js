@@ -10,11 +10,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        remember_token: ''
+        remember_token: '',
+        nickname: ''
     },
     mutations: {
         token(state, arg) {
-            state.remember_token = arg
+            state.remember_token = arg.remember_token
+            state.nickname = arg.nickname
         }
     },
     actions: {},

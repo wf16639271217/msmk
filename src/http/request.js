@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { baseApi } from '@/config'
 import { Toast } from 'vant'
+import store from "@/store"
 
 
 // 基础配置
@@ -19,7 +20,7 @@ service.interceptors.request.use(config => {
         forbidClick: true,
         duration: 3000, // 持续展示 toast
     });
-    config.headers['remember_token'] = JSON.parse(sessionStorage.getItem('token'));
+    config.headers['Authorization'] = 'Bearer ' + store.state.remember_token
     return config
 })
 

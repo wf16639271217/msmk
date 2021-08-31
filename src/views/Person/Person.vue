@@ -3,7 +3,8 @@
         <div class="person-box">
             <div class="box-center">
                 <img style="width:60px;height:60px" src="http://120.53.31.103:86/img/avatar.71c6d2b4.png" alt="">
-                <p style="color:#fff;font-size:20px;margin-top:10px" @click="goLogin">登陆/注册</p>
+                <p style="color:#fff;font-size:20px;margin-top:10px" @click="goLogin" v-if="!$store.state.nickname">登陆/注册</p>
+                <p v-if="$store.state.nickname">{{ $store.state.nickname }}</p>
             </div>
             <div class="box-bottom">
                 <div class="box-ad">
@@ -21,6 +22,11 @@
             </div>
         </div>
 
+        <!-- 去签到 -->
+        <div class="goSign" @click="goSign">
+            <img src="../../../public/images/签到.png" alt="">
+            <span>签到</span>
+        </div>
         
 
         <!-- person中间部分 -->
@@ -174,8 +180,14 @@ export default {
                 Toast.fail('还没登陆,先登陆!');
                 this.$router.push("/login")
             }
+        },
+        // 点击签到
+        goSign(){
+            if(this.$store.state.remember_token != ""){
+                this.$router.push("/person/sign")
+            }
         }
-    }
+    },
 }
 </script>
 
@@ -239,6 +251,31 @@ export default {
                 box-sizing: border-box;
                 border-bottom: 1px solid #F7F8FA;
             }
+        }
+    }
+
+    // 签到
+    .goSign{
+        width: 120px;
+        height: 50px;
+        position: absolute;
+        top: 100px;
+        right: 0px;
+        border-top-left-radius: 200px; 
+        border-bottom-left-radius: 200px;
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        padding-left: 20px;
+        box-sizing: border-box;
+        background-image:linear-gradient(to right,#6dbcff,#4e7de3);
+        img{
+            width: 20px;
+            height: 20px;
+            margin-top: 12px;
+        }
+        span{
+            margin-top: 5px;
         }
     }
 }

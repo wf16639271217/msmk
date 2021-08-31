@@ -42,13 +42,14 @@ export default {
   },
    methods: {
     async onSubmit(values) {
-      console.log('submit', values);
-      this.address()
-      const { data:res } = setPassword({
+      const { data:res } = await setPassword({
           mobile:this.phone,
           password:this.password,
           sms_code:this.pwd
       })
+      console.log(res);
+      Toast.success("设置成功");
+      this.$router.push("/person")
     },
     async address() {
       if (this.phone == "") {

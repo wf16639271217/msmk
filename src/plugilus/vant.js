@@ -9,7 +9,8 @@ import {
     Swipe,
     SwipeItem,
     Form,
-    Field
+    Field,
+    Calendar
 } from 'vant'
 Vue.use(Button)
 Vue.use(Cell)
@@ -20,3 +21,4 @@ Vue.use(Swipe);
 Vue.use(SwipeItem);
 Vue.use(Form);
 Vue.use(Field);
+Vue.use(Calendar);

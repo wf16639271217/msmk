@@ -5,5 +5,6 @@ module.exports = {
     banner: '/banner',
     nav: "/nav",
     appIndex: "/recommend/appIndex",
-    password: "/password"
+    password: "/password",
+    integ: "/integral/shop/index"
 }

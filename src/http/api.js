@@ -65,3 +65,12 @@ export function appIndex(arg) {
         method: "get"
     })
 }
+
+// 个人 签到  好客推荐
+export function integral(arg) {
+    return request({
+        url: address.integ,
+        data: arg,
+        method: "get"
+    })
+}

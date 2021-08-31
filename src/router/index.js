@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Index from '@/views/Index/Index.vue'
+import Index from '@/views/Index/index.vue'
 import ShowTeachers from '@/views/ShowTeachers/ShowTeachers.vue'
 import BookList from '@/views/BookList/BookList.vue'
 import News from '@/views/News/News.vue'
@@ -43,9 +43,18 @@ const routes = [{
             path: "/index",
             component: Index
         }]
-    }, {
+    },
+    // 个人 设置页路由
+    {
         path: "/setUser",
         component: SetUser
+    },
+    // 个人  签到页路由
+    {
+        path: "/person/sign",
+        name: 'sign',
+        component: () =>
+            import ('../views/Person/sign.vue')
     }
 ]
 

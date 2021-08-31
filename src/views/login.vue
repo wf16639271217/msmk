@@ -81,13 +81,18 @@ export default {
        let PhoneReg = /^1[3456789]\d{9}$/;
         if (PhoneReg.test(this.phone) || this.pwd.length == 6) {
           if (this.flag) { //true 为验证码登陆
-            const { data: res } = await login({
+            const data = await login({
               mobile: this.phone,
               sms_code: this.pwd,
               type: 2,
               client: "1"
             });
-            this.$store.commit("token", res.data.remember_token);
+            console.log(data);
+            let obj = {
+                remember_token:data.data.remember_token,
+                nickname: data.data.nickname
+              }
+            this.$store.commit("token", obj);
             Toast.success("登陆成功");
             this.$router.push("/person")
           }else{ //false 为密码登陆
@@ -97,9 +102,12 @@ export default {
               type: 1,
               client: "1"
             });
-            console.log(res);
-            if(res.code == 200){
-              this.$store.commit("token", res.data.remember_token);
+            if(res.remember_token){
+              let obj = {
+                remember_token:res.remember_token,
+                nickname: res.nickname
+              }
+              this.$store.commit("token", obj);
               Toast.success("登陆成功");
               this.$router.push("/person")
             }
