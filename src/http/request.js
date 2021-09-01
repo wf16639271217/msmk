@@ -8,7 +8,7 @@ import store from "@/store"
 const service = axios.create({
     baseURL: baseApi, // url = base api url + request url
     // withCredentials: true, // send cookies when cross-domain requests 请求是否携带Cookies
-    timeout: 5000 // request timeout
+    timeout: 20000 // request timeout
 })
 
 let loading;

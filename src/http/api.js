@@ -74,3 +74,59 @@ export function integral(arg) {
         method: "get"
     })
 }
+
+// 个人 签到  好客推荐
+export function signRecord(arg) {
+    return request({
+        url: address.signRecord,
+        data: arg,
+        method: "get"
+    })
+}
+
+// 课程 讲师
+export function attrs(arg) {
+    return request({
+        url: address.attrs,
+        data: arg,
+        method: "get"
+    })
+}
+
+
+// 讲师详情
+export function teacherId(urls, arg) {
+    return request({
+        url: address.teacherId + urls,
+        data: arg,
+        method: "get"
+    })
+}
+
+// 主讲课程
+export function t_mainCourse(arg) {
+    return request({
+        url: address.t_mainCourse,
+        data: arg,
+        method: "post"
+    })
+}
+
+// 课程详情
+export function courseInfo(urls, arg) {
+    return request({
+        url: address.courseInfo + urls,
+        data: arg,
+        method: "get"
+    })
+}
+
+
+// 课程大纲数据
+export function courseChapter(arg) {
+    return request({
+        url: address.courseChapter,
+        data: arg,
+        method: "post"
+    })
+}

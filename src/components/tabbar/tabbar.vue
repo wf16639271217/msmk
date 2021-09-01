@@ -18,17 +18,23 @@ export default {
     data(){
         return {
             tabbat_list:[],
-            active:0
+            active:0,
+            list:['index','showteachers','news','booklist','person']
         }
     },
     async created(){
         const { data:res } = await bottom();
         this.tabbat_list = res.index
+        console.log(res);
     },
     methods:{
         tabbar(item,index){
             this.active = index
-            this.$router.push(item.url)
+            this.tabbat_list.filter((item,ind)=>{
+                return item.url = this.list[ind]
+            })
+            this.$router.push(this.tabbat_list[index].url)
+
         }
     }
 }

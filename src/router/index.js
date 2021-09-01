@@ -55,6 +55,20 @@ const routes = [{
         name: 'sign',
         component: () =>
             import ('../views/Person/sign.vue')
+    },
+    // 课程跳详情
+    {
+        path: "/showteachers/teachersdetail",
+        name: 'teachersdetail',
+        component: () =>
+            import ('../views/ShowTeachers/teachersdetail.vue')
+    },
+    // 课程跳详情
+    {
+        path: "/coursedetail",
+        name: 'courseDetail',
+        component: () =>
+            import ('../views/ShowTeachers/courseDetail.vue')
     }
 ]
 

@@ -6,5 +6,13 @@ module.exports = {
     nav: "/nav",
     appIndex: "/recommend/appIndex",
     password: "/password",
-    integ: "/integral/shop/index"
+    integ: "/integral/shop/index",
+    signRecord: "/user/integral/signRecord",
+    attrs: "/teacher/search/attrs",
+    teacherComment: "/teacher/comment",
+    teacherId: "/teacher",
+    t_mainCourse: '/teacher/mainCourse',
+    courseInfo: "/courseInfo",
+    courseChapter: "/courseChapter"
+
 }

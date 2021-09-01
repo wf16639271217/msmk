@@ -20,12 +20,14 @@
             <div class="calendar">
                <!-- <van-popup v-model="show" get-container=".calendar" /> -->
                <van-calendar
-               :show-mark="false"
-               :show-title="false"
+                :show-mark="false"
+                :show-title="false"
+                row-height="45px"
+                :formatter="formatter"
+                :readonly="true"
                 :poppable="false"
                 :show-confirm="false"
                 :style="{ height: '500px' }"
-                type="multiple"
                 />
             </div>
 
@@ -80,13 +82,39 @@
 </template>
 
 <script>
-import {integral} from "@/http/api.js"
+import {integral,signRecord} from "@/http/api.js"
 export default {
     data() {
     return {
       show: true,
     };
   },
+  async created(){
+      const tady = new Date;
+      const year = tady.getFullYear();
+      const month_new = tady.getMonth()+1;
+      const date_new = tady.getDate();
+    const { data:res } = await signRecord({
+        data:`${year}-${month_new}-${date_new}`
+    })
+    console.log(res);
+  },
+  methods:{
+      formatter(day) {
+      const month = day.date.getMonth() + 1;
+      const date = day.date.getDate();
+      const tady = new Date;
+      const year = tady.getFullYear();
+      const month_new = tady.getMonth()+1;
+      const date_new = tady.getDate();
+      if(month == month_new && date_new == date ){
+          day.bottomInfo = '+1';
+          day.text = "√"
+      }
+      return day;
+    },
+
+  }
 }
 </script>
 
@@ -133,7 +161,12 @@ export default {
         border-radius: 20px;
         box-shadow: 1px 10px 5px #ccc;
         overflow: hidden;
-        
+        /deep/.van-calendar__bottom-info{
+            bottom: 2px;
+        }
+        /deep/.van-calendar__selected-day{
+            border-radius: 50%;
+        }
     }   
 
     .sign-footer{
