@@ -14,11 +14,11 @@ import {
     Tab,
     Tabs,
     Calendar,
-    Card
+    Card,
 } from 'vant'
 Vue.use(Button)
-Vue.use(Cell)
-Vue.use(List)
+Vue.use(Cell);
+Vue.use(List);
 Vue.use(Tabbar).use(TabbarItem)
 Vue.use(Icon);
 Vue.use(Swipe);
@@ -30,3 +30,4 @@ Vue.use(Tab);
 Vue.use(Empty);
 Vue.use(Card);
 Vue.use(Tabs);
+Vue.use(Empty);

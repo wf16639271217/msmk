@@ -130,3 +130,31 @@ export function courseChapter(arg) {
         method: "post"
     })
 }
+
+// 咨询页面  顶部tab栏
+export function classify(arg) {
+    return request({
+        url: address.classify,
+        data: arg,
+        method: "get"
+    })
+}
+
+// 咨询页面  分类内容
+export function information(arg) {
+    return request({
+        url: address.information,
+        data: arg,
+        method: "post"
+    })
+}
+
+
+// 咨询详情
+export function indetail(arg) {
+    return request({
+        url: address.indetail,
+        data: arg,
+        method: "post"
+    })
+}

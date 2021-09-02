@@ -69,6 +69,13 @@ const routes = [{
         name: 'courseDetail',
         component: () =>
             import ('../views/ShowTeachers/courseDetail.vue')
+    },
+    // 资讯详情
+    {
+        path: "/newsdetail",
+        name: 'NewsDetail',
+        component: () =>
+            import ('../views/News/newsdetail.vue')
     }
 ]
 

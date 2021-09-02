@@ -13,6 +13,9 @@ module.exports = {
     teacherId: "/teacher",
     t_mainCourse: '/teacher/mainCourse',
     courseInfo: "/courseInfo",
-    courseChapter: "/courseChapter"
+    courseChapter: "/courseChapter",
+    classify: "/information/classify",
+    information: "/information/index",
+    indetail: "/information/detail"
 
 }
